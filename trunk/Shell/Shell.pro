@@ -6,7 +6,7 @@
 
 QT += core gui sql
 
-TARGET = client
+TARGET = Client
 TEMPLATE = app
 
 HEADERS += \

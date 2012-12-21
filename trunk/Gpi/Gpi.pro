@@ -6,7 +6,7 @@
 
 QT += core
 
-TARGET = gpi
+TARGET = Gpi
 TEMPLATE = lib
 
 DEFINES += GPI_LIBRARY

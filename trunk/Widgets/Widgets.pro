@@ -6,7 +6,7 @@
 
 QT += core gui sql
 
-TARGET = widgets
+TARGET = Widgets
 TEMPLATE = lib
 
 DEFINES += WIDGETS_LIBRARY
