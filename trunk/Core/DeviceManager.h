@@ -25,7 +25,7 @@ class CORE_EXPORT DeviceManager : public QObject
         QList<DeviceModel> getDeviceModels() const;
         const DeviceModel getDeviceModelByAddress(const QString& address) const;
 
-        const int getConnectionCount() const;
+        int   getConnectionCount() const;
         const QSharedPointer<CasparDevice> getConnectionByName(const QString& name) const;
 
         Q_SIGNAL void deviceRemoved();

@@ -35,6 +35,7 @@
 
 #include <iostream>
 
+#include <QtCore/QFile>
 #include <QtCore/QDebug>
 #include <QtCore/QPoint>
 #include <QtCore/QTextCodec>

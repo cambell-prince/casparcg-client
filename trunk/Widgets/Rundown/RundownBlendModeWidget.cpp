@@ -231,7 +231,7 @@ void RundownBlendModeWidget::executeStop()
 
     const QSharedPointer<CasparDevice> device = DeviceManager::getInstance().getConnectionByName(this->model.getDeviceName());
     if (device != NULL && device->isConnected())
-        device->setBlendMode(this->command.getChannel(), this->command.getVideolayer(), "Normal");
+        device->setBlendMode(this->command.getChannel(), this->command.getVideolayer(), "Normal", "None", 1.0, 1.0, 1.0);
 
     foreach (const DeviceModel& model, DeviceManager::getInstance().getDeviceModels())
     {
@@ -240,7 +240,7 @@ void RundownBlendModeWidget::executeStop()
 
         const QSharedPointer<CasparDevice> deviceShadow = DeviceManager::getInstance().getConnectionByName(model.getName());
         if (deviceShadow != NULL && deviceShadow->isConnected())
-            deviceShadow->setBlendMode(this->command.getChannel(), this->command.getVideolayer(), "Normal");
+            deviceShadow->setBlendMode(this->command.getChannel(), this->command.getVideolayer(), "Normal", "None", 1.0, 1.0, 1.0);
     }
 }
 
@@ -248,7 +248,12 @@ void RundownBlendModeWidget::executePlay()
 {
     const QSharedPointer<CasparDevice> device = DeviceManager::getInstance().getConnectionByName(this->model.getDeviceName());
     if (device != NULL && device->isConnected())
-        device->setBlendMode(this->command.getChannel(), this->command.getVideolayer(), this->command.getBlendMode());
+        device->setBlendMode(this->command.getChannel(), this->command.getVideolayer(),
+                this->command.getBlendMode(),
+                this->command.getChroma().getKey(),
+                this->command.getChroma().getBlendStart(),
+                this->command.getChroma().getBlendStop(),
+                this->command.getChroma().getSpill());
 
     foreach (const DeviceModel& model, DeviceManager::getInstance().getDeviceModels())
     {
@@ -257,7 +262,12 @@ void RundownBlendModeWidget::executePlay()
 
         const QSharedPointer<CasparDevice>  deviceShadow = DeviceManager::getInstance().getConnectionByName(model.getName());
         if (deviceShadow != NULL && deviceShadow->isConnected())
-            deviceShadow->setBlendMode(this->command.getChannel(), this->command.getVideolayer(), this->command.getBlendMode());
+            deviceShadow->setBlendMode(this->command.getChannel(), this->command.getVideolayer(),
+                    this->command.getBlendMode(),
+                    this->command.getChroma().getKey(),
+                    this->command.getChroma().getBlendStart(),
+                    this->command.getChroma().getBlendStop(),
+                    this->command.getChroma().getSpill());
     }
 }
 

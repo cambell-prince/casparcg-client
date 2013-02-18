@@ -119,7 +119,7 @@ const DeviceModel DeviceManager::getDeviceModelByAddress(const QString& address)
     throw std::runtime_error("No DeviceModel found for specified address");
 }
 
-const int DeviceManager::getConnectionCount() const
+int DeviceManager::getConnectionCount() const
 {
     return this->connections.count();
 }

@@ -103,6 +103,10 @@ namespace Mixer
     static const int DEFAULT_DURATION = 1;
     static const bool DEFAULT_DEFER = false;
     static const QString DEFAULT_BLENDMODE = "Normal";
+    static const QString DEFAULT_CHROMAKEY = "None";
+    static const float   DEFAULT_CHROMABLENDSTART = 0.06f;
+    static const float   DEFAULT_CHROMABLENDSTOP = 0.26f;
+    static const float   DEFAULT_CHROMASPILL = 1.0f;
     static const QString DEFAULT_TWEEN = "Linear";
     static const QString DEFAULT_DIRECTION = "RIGHT";
     static const QString DEFAULT_TRANSITION = "CUT";

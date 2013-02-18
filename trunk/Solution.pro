@@ -1,5 +1,7 @@
 TEMPLATE = subdirs
 
+DEFINES += -g -O0
+
 SUBDIRS += \
     Common \
     Caspar \

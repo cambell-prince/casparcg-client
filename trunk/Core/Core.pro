@@ -62,7 +62,9 @@ HEADERS += \
     Commands/GroupCommand.h \
     Events/OpenRundownEvent.h \
     Commands/BlendModeCommand.h \
+    Commands/ChromaCommand.h \
     Models/BlendModeModel.h \
+    Models/ChromaModel.h \
     Events/SaveRundownEvent.h \
     LibraryManager.h \
     Events/RefreshLibraryEvent.h \
@@ -129,7 +131,9 @@ SOURCES += \
     Commands/GroupCommand.cpp \
     Events/OpenRundownEvent.cpp \
     Models/BlendModeModel.cpp \
+    Models/ChromaModel.cpp \
     Commands/BlendModeCommand.cpp \
+    Commands/ChromaCommand.cpp \
     Events/SaveRundownEvent.cpp \
     LibraryManager.cpp \
     Events/AutoRefreshLibraryEvent.cpp \
@@ -166,7 +170,7 @@ DEPENDPATH += $$PWD/../Gpi $$OUT_PWD/../Gpi
 INCLUDEPATH += $$PWD/../Gpi $$OUT_PWD/../Gpi
 win32:CONFIG(release, debug|release):LIBS += -L$$OUT_PWD/../Gpi/release/ -lgpi
 else:win32:CONFIG(debug, debug|release):LIBS += -L$$OUT_PWD/../Gpi/debug/ -lgpi
-else:unix:LIBS += -L$$OUT_PWD/../Gpi/ -lGpi
+else:unix:LIBS += -L$$OUT_PWD/../Gpi/ -lgpi
 
 DEPENDPATH += $$PWD/../Common $$OUT_PWD/../Common
 INCLUDEPATH += $$PWD/../Common $$OUT_PWD/../Common

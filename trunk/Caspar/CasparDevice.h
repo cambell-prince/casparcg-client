@@ -10,7 +10,7 @@
 
 class CASPAR_EXPORT CasparDevice : public AMCPDevice
 {
-    Q_OBJECT
+    Q_OBJECT;
 
     public:
         explicit CasparDevice(QObject* parent = 0);
@@ -18,7 +18,7 @@ class CASPAR_EXPORT CasparDevice : public AMCPDevice
         void connect(const QString& address, int port = 5250);
         void disconnect();
 
-        const int getPort() const;
+        int   getPort() const;
         const QString getAddress() const;
 
         void refreshData();
@@ -75,7 +75,7 @@ class CASPAR_EXPORT CasparDevice : public AMCPDevice
         void stopImageScroll(int channel, int videolayer);
 
         void setCommit(int channel);
-        void setBlendMode(int channel, int videolayer, const QString& blendMode);
+        void setBlendMode(int channel, int videolayer, const QString& blendMode, const QString& chromaKey, float chromaBlendStart, float chromaBlendStop, float chromaSpill);
         void setGrid(int channel, int grid, int duration, const QString& easing, bool defer = false);
         void setKeyer(int channel, int videolayer, int keyer, bool defer = false);
         void setVolume(int channel, int videolayer, float volume, bool defer = false);

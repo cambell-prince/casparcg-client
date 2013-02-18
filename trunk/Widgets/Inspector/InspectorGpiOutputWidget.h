@@ -4,7 +4,7 @@
 #include "ui_InspectorGpiOutputWidget.h"
 #include "Commands/GpiOutputCommand.h"
 
-#include <QWidget>
+#include <QtGui/QWidget>
 
 class WIDGETS_EXPORT InspectorGpiOutputWidget : public QWidget, Ui::InspectorGpiOutputWidget
 {

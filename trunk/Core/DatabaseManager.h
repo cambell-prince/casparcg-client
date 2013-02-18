@@ -2,6 +2,7 @@
 
 #include "Shared.h"
 #include "Models/BlendModeModel.h"
+#include "Models/ChromaModel.h"
 #include "Models/ConfigurationModel.h"
 #include "Models/DeviceModel.h"
 #include "Models/DirectionModel.h"
@@ -32,6 +33,7 @@ class CORE_EXPORT DatabaseManager
         ConfigurationModel getConfigurationByName(const QString& name);
 
         QList<BlendModeModel> getBlendMode();
+        QList<ChromaModel> getChroma();
         QList<DirectionModel> getDirection();
         QList<FormatModel> getFormat();
         QList<TransitionModel> getTransition();

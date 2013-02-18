@@ -6,7 +6,7 @@
 
 #include <gpio/serial_port_device.h>
 
-#include <QSharedPointer>
+#include <QtCore/QSharedPointer>
 
 class GPI_EXPORT GpiDevice : public QObject
 {

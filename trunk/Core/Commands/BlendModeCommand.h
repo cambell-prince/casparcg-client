@@ -2,6 +2,7 @@
 
 #include "../Shared.h"
 #include "AbstractCommand.h"
+#include "Commands/ChromaCommand.h"
 
 #include <boost/foreach.hpp>
 #include <boost/property_tree/ptree.hpp>
@@ -23,11 +24,14 @@ class CORE_EXPORT BlendModeCommand : public AbstractCommand
         virtual void writeProperties(QXmlStreamWriter* writer);
 
         const QString& getBlendMode() const;
+        const ChromaCommand& getChroma() const;
+        ChromaCommand& getChroma();
 
         void setBlendMode(const QString& blendMode);
 
     private:
         QString blendMode;
+        ChromaCommand chroma;
 
         Q_SIGNAL void blendModeChanged(const QString&);
 };
