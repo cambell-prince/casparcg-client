@@ -43,7 +43,7 @@ void DatabaseManager::initialize()
     // Setup the database.
     QSqlQuery sql;
     sql.exec("CREATE TABLE BlendMode (Id INTEGER PRIMARY KEY, Value TEXT)");
-    sql.exec("CREATE TABLE Chroma (Id INTEGR PRIMARY KEY, Key TEXT, BlendStart INTEGER, BlendStop INTEGER, Spill INTEGER)");
+    sql.exec("CREATE TABLE Chroma (Id INTEGR PRIMARY KEY, Key TEXT)");
     sql.exec("CREATE TABLE Configuration (Id INTEGER PRIMARY KEY, Name TEXT, Value TEXT)");
     sql.exec("CREATE TABLE Device (Id INTEGER PRIMARY KEY, Name TEXT, Address TEXT, Port INTEGER, Username TEXT, Password TEXT, Description TEXT, Version TEXT, Shadow TEXT, Channels INTEGER)");
     sql.exec("CREATE TABLE Direction (Id INTEGER PRIMARY KEY, Value TEXT)");
@@ -87,9 +87,13 @@ void DatabaseManager::initialize()
     sql.exec("INSERT INTO BlendMode (Value) VALUES('Color')");
     sql.exec("INSERT INTO BlendMode (Value) VALUES('Luminosity')");
 
-    sql.exec("INSERT INTO Chroma (Key, BlendStart, BlendStop, Spill) VALUES('None', 100, 100, 100)");
-    sql.exec("INSERT INTO Chroma (Key, BlendStart, BlendStop, Spill) VALUES('Green', 6, 26, 100)");
-    sql.exec("INSERT INTO Chroma (Key, BlendStart, BlendStop, Spill) VALUES('Blue', 6, 26, 100)");
+    sql.exec("INSERT INTO Chroma (Key, Threshold) VALUES('None')");
+    sql.exec("INSERT INTO Chroma (Key, Threshold) VALUES('Red')");
+    sql.exec("INSERT INTO Chroma (Key, Threshold) VALUES('Yellow')");
+    sql.exec("INSERT INTO Chroma (Key, Threshold) VALUES('Green')");
+    sql.exec("INSERT INTO Chroma (Key, Threshold) VALUES('Torquise')");
+    sql.exec("INSERT INTO Chroma (Key, Threshold) VALUES('Blue')");
+    sql.exec("INSERT INTO Chroma (Key, Threshold) VALUES('Magenta')");
 
     sql.exec("INSERT INTO Configuration (Name, Value) VALUES('StartFullscreen', 'false')");
     sql.exec("INSERT INTO Configuration (Name, Value) VALUES('AutoRefreshLibrary', 'false')");
@@ -280,11 +284,11 @@ QList<ChromaModel> DatabaseManager::getChroma()
     QSqlQuery sql;
     QList<ChromaModel> models;
 
-    QString query("SELECT b.Id, b.Key, b.BlendStart, b.BlendStop, b.Spill FROM Chroma b");
+    QString query("SELECT b.Id, b.Key FROM Chroma b");
 
     sql.exec(query);
     while (sql.next())
-        models.push_back(ChromaModel(sql.value(0).toInt(), sql.value(1).toString(), sql.value(2).toString(), sql.value(3).toString(), sql.value(4).toString()));
+        models.push_back(ChromaModel(sql.value(0).toInt(), sql.value(1).toString()));
 
     return models;
 }

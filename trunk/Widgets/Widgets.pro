@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT += core gui sql
+CONFIG += debug
 
 TARGET = widgets
 TEMPLATE = lib
@@ -61,7 +62,9 @@ HEADERS += \
     Rundown/RundownFileRecorderWidget.h \
     Inspector/InspectorFileRecorderWidget.h \
     Inspector/InspectorBlendModeWidget.h \
+    Inspector/InspectorChromaWidget.h \
     Rundown/RundownBlendModeWidget.h \
+    Rundown/RundownChromaWidget.h \
     Rundown/RundownSeparatorWidget.h \
     Rundown/RundownPrintWidget.h \
     Inspector/InspectorKeyerWidget.h \
@@ -120,7 +123,9 @@ SOURCES += \
     Rundown/RundownImageScrollerWidget.cpp \
     Rundown/RundownFileRecorderWidget.cpp \
     Inspector/InspectorBlendModeWidget.cpp \
+    Inspector/InspectorChromaWidget.cpp \
     Rundown/RundownBlendModeWidget.cpp \
+    Rundown/RundownChromaWidget.cpp \
     Rundown/RundownSeparatorWidget.cpp \
     Rundown/RundownPrintWidget.cpp \
     Inspector/InspectorKeyerWidget.cpp \
@@ -179,7 +184,9 @@ FORMS += \
     Rundown/RundownImageScrollerWidget.ui \ 
     Rundown/RundownFileRecorderWidget.ui \
     Inspector/InspectorBlendModeWidget.ui \
+    Inspector/InspectorChromaWidget.ui \
     Rundown/RundownBlendModeWidget.ui \
+    Rundown/RundownChromaWidget.ui \
     Rundown/RundownSeparatorWidget.ui \
     Rundown/RundownPrintWidget.ui \
     Inspector/InspectorKeyerWidget.ui \

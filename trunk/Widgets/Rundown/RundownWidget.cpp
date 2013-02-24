@@ -1,5 +1,6 @@
 #include "RundownWidget.h"
 #include "RundownBlendModeWidget.h"
+#include "RundownChromaWidget.h"
 #include "RundownBrightnessWidget.h"
 #include "RundownCommitWidget.h"
 #include "RundownContrastWidget.h"
@@ -71,6 +72,7 @@ void RundownWidget::setupUiMenu()
     this->mixerMenu->setTitle("Mixer");
     //this->mixerMenu->setIcon(QIcon(":/Graphics/Images/Mixer.png"));
     this->mixerMenu->addAction(/*QIcon(":/Graphics/Images/Mixer.png"),*/ "Blend Mode", this, SLOT(addBlendModeCommand()));
+    this->mixerMenu->addAction(/*QIcon(":/Graphics/Images/Mixer.png"),*/ "Chroma Key", this, SLOT(addChromaCommand()));
     this->mixerMenu->addAction(/*QIcon(":/Graphics/Images/Mixer.png"),*/ "Brightness", this, SLOT(addBrightnessCommand()));
     this->mixerMenu->addAction(/*QIcon(":/Graphics/Images/Mixer.png"),*/ "Contrast", this, SLOT(addContrastCommand()));
     this->mixerMenu->addAction(/*QIcon(":/Graphics/Images/Mixer.png"),*/ "Crop", this, SLOT(addCropCommand()));
@@ -321,6 +323,8 @@ bool RundownWidget::eventFilter(QObject* target, QEvent* event)
         AbstractRundownWidget* widget = NULL;
         if (addRudnownItemEvent->getLibraryModel().getType() == "BLENDMODE")
             widget = new RundownBlendModeWidget(addRudnownItemEvent->getLibraryModel(), this);
+        else if (addRudnownItemEvent->getLibraryModel().getType() == "CHROMA")
+            widget = new RundownChromaWidget(addRudnownItemEvent->getLibraryModel(), this);
         else if (addRudnownItemEvent->getLibraryModel().getType() == "BRIGHTNESS")
             widget = new RundownBrightnessWidget(addRudnownItemEvent->getLibraryModel(), this);
         else if (addRudnownItemEvent->getLibraryModel().getType() == "CONTRAST")
@@ -472,6 +476,8 @@ void RundownWidget::readRundownItem(const QString& type, boost::property_tree::w
     AbstractRundownWidget* widget = NULL;
     if (type == "BLENDMODE")
         widget = new RundownBlendModeWidget(LibraryModel(-1, label, name, deviceName, type), this);
+    else if (type == "CHROMA")
+        widget = new RundownChromaWidget(LibraryModel(-1, label, name, deviceName, type), this);
     else if (type == "BRIGHTNESS")
         widget = new RundownBrightnessWidget(LibraryModel(-1, label, name, deviceName, type), this);
     else if (type == "CONTRAST")
@@ -1126,6 +1132,11 @@ bool RundownWidget::ungroupItems()
 void RundownWidget::addBlendModeCommand()
 {
     qApp->postEvent(qApp, new AddRudnownItemEvent(LibraryModel(-1, "Blend Mode", "", "", "BLENDMODE")));
+}
+
+void RundownWidget::addChromaCommand()
+{
+    qApp->postEvent(qApp, new AddRudnownItemEvent(LibraryModel(-1, "Chroma Key", "", "", "CHROMA")));
 }
 
 void RundownWidget::addBrightnessCommand()

@@ -85,6 +85,7 @@ class WIDGETS_EXPORT RundownWidget : public QWidget, Ui::RundownWidget
         Q_SLOT void addTemplateCommand();
         Q_SLOT void addVideoCommand();
         Q_SLOT void addBlendModeCommand();
+        Q_SLOT void addChromaCommand();
         Q_SLOT void addColorProducerCommand();
         Q_SLOT void addBrightnessCommand();
         Q_SLOT void addCommitCommand();

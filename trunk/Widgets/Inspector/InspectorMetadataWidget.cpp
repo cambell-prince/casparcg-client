@@ -4,6 +4,7 @@
 
 #include "DeviceManager.h"
 #include "Commands/BlendModeCommand.h"
+#include "Commands/ChromaCommand.h"
 #include "Commands/BrightnessCommand.h"
 #include "Commands/CommitCommand.h"
 #include "Commands/ContrastCommand.h"
@@ -92,6 +93,7 @@ bool InspectorMetadataWidget::eventFilter(QObject* target, QEvent* event)
                  dynamic_cast<FileRecorderCommand*>(rundownItemSelectedEvent->getCommand()) ||
                  dynamic_cast<DeckLinkInputCommand*>(rundownItemSelectedEvent->getCommand()) ||
                  dynamic_cast<BlendModeCommand*>(rundownItemSelectedEvent->getCommand()) ||
+                 dynamic_cast<ChromaCommand*>(rundownItemSelectedEvent->getCommand()) ||
                  dynamic_cast<BrightnessCommand*>(rundownItemSelectedEvent->getCommand()) ||
                  dynamic_cast<CommitCommand*>(rundownItemSelectedEvent->getCommand()) ||
                  dynamic_cast<ContrastCommand*>(rundownItemSelectedEvent->getCommand()) ||

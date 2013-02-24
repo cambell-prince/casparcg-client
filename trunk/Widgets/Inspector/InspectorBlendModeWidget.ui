@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>177</width>
-    <height>56</height>
+    <width>356</width>
+    <height>507</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -20,25 +20,24 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayoutBlendMode">
      <item>
-      <spacer name="horizontalSpacerBlendMode">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+      <widget class="QLabel" name="labelBlendMode">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
+       <property name="minimumSize">
         <size>
-         <width>15</width>
-         <height>20</height>
+         <width>75</width>
+         <height>0</height>
         </size>
        </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelBlendMode">
        <property name="text">
         <string>&lt;a href=&quot;Blend Mode&quot; style=&quot;color: #BEBEBE;&quot;&gt;Blend Mode&lt;/a&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
@@ -55,222 +54,17 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayoutChroma">
-     <item>
-      <spacer name="horizontalSpacerChroma">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>90</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelChroma">
-       <property name="text">
-        <string>&lt;a href=&quot;Chroma Keying&quot; style=&quot;color: #BEBEBE;&quot;&gt;Chroma Keying&lt;/a&gt;</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayoutChromaKey">
-     <item>
-      <spacer name="horizontalSpacerChromaKey">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>45</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelChromaKey">
-       <property name="text">
-        <string>&lt;a href=&quot;Key&quot; style=&quot;color: #BEBEBE;&quot;&gt;Key&lt;/a&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="comboBoxChromaKey">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalChromaBlendStart">
-     <item>
-      <spacer name="horizontalSpacerChromaBlendStart">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>5</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelChromaBlendStart">
-       <property name="text">
-        <string>&lt;a href=&quot;Blend start&quot; style=&quot;color: #BEBEBE;&quot;&gt;Blend start&lt;/a&gt;</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSlider" name="sliderChromaBlendStart">
-       <property name="maximum">
-        <number>100</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSpinBox" name="spinBoxChromaBlendStart">
-       <property name="maximum">
-        <number>100</number>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalChromaBlendStop">
-     <item>
-      <spacer name="horizontalSpacerChromaBlendStop">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>8</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelChromaBlendStop">
-       <property name="text">
-        <string>&lt;a href=&quot;Blend stop&quot; style=&quot;color: #BEBEBE;&quot;&gt;Blend stop&lt;/a&gt;</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSlider" name="sliderChromaBlendStop">
-       <property name="maximum">
-        <number>100</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSpinBox" name="spinBoxChromaBlendStop">
-       <property name="maximum">
-        <number>100</number>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalChromaSpill">
-     <item>
-      <spacer name="horizontalSpacerChromaSpill">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>8</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelChromaSpill">
-       <property name="text">
-        <string>&lt;a href=&quot;Spill&quot; style=&quot;color: #BEBEBE;&quot;&gt;Spill&lt;/a&gt;</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSlider" name="sliderChromaSpill">
-       <property name="maximum">
-        <number>100</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSpinBox" name="spinBoxChromaSpill">
-       <property name="maximum">
-        <number>100</number>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
     <spacer name="verticalSpacerBlendMode">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
+      <enum>QSizePolicy::Expanding</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>20</width>
-       <height>10</height>
+       <width>0</width>
+       <height>0</height>
       </size>
      </property>
     </spacer>
@@ -283,15 +77,15 @@
    <sender>labelBlendMode</sender>
    <signal>linkActivated(QString)</signal>
    <receiver>InspectorBlendModeWidget</receiver>
-   <slot>resetBlendMode(QString)</slot>
+   <slot>resetBlendMode()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>47</x>
-     <y>22</y>
+     <x>54</x>
+     <y>28</y>
     </hint>
     <hint type="destinationlabel">
-     <x>5</x>
-     <y>20</y>
+     <x>-7</x>
+     <y>146</y>
     </hint>
    </hints>
   </connection>
@@ -299,207 +93,21 @@
    <sender>comboBoxBlendMode</sender>
    <signal>currentIndexChanged(QString)</signal>
    <receiver>InspectorBlendModeWidget</receiver>
-   <slot>blendModeChanged(QString)</slot>
+   <slot>setBlendMode(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>155</x>
-     <y>22</y>
+     <x>208</x>
+     <y>30</y>
     </hint>
     <hint type="destinationlabel">
-     <x>179</x>
-     <y>21</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>labelChromaKey</sender>
-   <signal>linkActivated(QString)</signal>
-   <receiver>InspectorBlendModeWidget</receiver>
-   <slot>resetChromaKey(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>47</x>
-     <y>22</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>5</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>comboBoxChromaKey</sender>
-   <signal>currentIndexChanged(QString)</signal>
-   <receiver>InspectorBlendModeWidget</receiver>
-   <slot>chromaKeyChanged(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>155</x>
-     <y>22</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>179</x>
-     <y>21</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>labelChromaBlendStart</sender>
-   <signal>linkActivated(QString)</signal>
-   <receiver>InspectorBlendModeWidget</receiver>
-   <slot>resetChromaBlendStart(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>75</x>
-     <y>29</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>195</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderChromaBlendStart</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>InspectorBlendModeWidget</receiver>
-   <slot>sliderChromaBlendStartChanged(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>124</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>21</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>spinBoxChromaBlendStart</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>InspectorBlendModeWidget</receiver>
-   <slot>spinBoxChromaBlendStartChanged(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>188</x>
-     <y>18</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>213</x>
-     <y>18</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>labelChromaBlendStop</sender>
-   <signal>linkActivated(QString)</signal>
-   <receiver>InspectorBlendModeWidget</receiver>
-   <slot>resetChromaBlendStop(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>75</x>
-     <y>29</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>195</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderChromaBlendStop</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>InspectorBlendModeWidget</receiver>
-   <slot>sliderChromaBlendStopChanged(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>124</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>21</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>spinBoxChromaBlendStop</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>InspectorBlendModeWidget</receiver>
-   <slot>spinBoxChromaBlendStopChanged(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>188</x>
-     <y>18</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>213</x>
-     <y>18</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>labelChromaSpill</sender>
-   <signal>linkActivated(QString)</signal>
-   <receiver>InspectorBlendModeWidget</receiver>
-   <slot>resetChromaSpill(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>75</x>
-     <y>29</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>195</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderChromaSpill</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>InspectorBlendModeWidget</receiver>
-   <slot>sliderChromaSpillChanged(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>124</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>0</x>
-     <y>21</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>spinBoxChromaSpill</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>InspectorBlendModeWidget</receiver>
-   <slot>spinBoxChromaSpillChanged(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>188</x>
-     <y>18</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>213</x>
-     <y>18</y>
+     <x>198</x>
+     <y>515</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>resetBlendMode(QString)</slot>
-  <slot>resetChromaKey(QString)</slot>
-  <slot>resetChromaBlendStart(QString)</slot>
-  <slot>resetChromaBlendStop(QString)</slot>
-  <slot>blendModeChanged(QString)</slot>
-  <slot>chromaKeyChanged(QString)</slot>
-  <slot>sliderChromaBlendStartChanged(int)</slot>
-  <slot>spinBoxChromaBlendStartChanged(int)</slot>
-  <slot>spinBoxChromaBlendStopChanged(int)</slot>
-  <slot>sliderChromaBlendStopChanged(int)</slot>  
-  <slot>spinBoxChromaSpillChanged(int)</slot>
-  <slot>sliderChromaSpillChanged(int)</slot>  
+  <slot>setBlendMode(QString)</slot>
+  <slot>resetBlendMode()</slot>
  </slots>
 </ui>

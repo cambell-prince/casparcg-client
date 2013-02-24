@@ -87,12 +87,12 @@ void AMCPDevice::readMessage()
     while (this->socket->bytesAvailable() && this->socket->canReadLine())
     {
         this->line += QString::fromUtf8(this->socket->readLine());
-        if (this->line.endsWith("\r\n"))
+        if (this->line.endsWith("\n"))
         {
-            if (this->line == "\r\n")
-                this->line.remove(QRegExp("\r\n"));
+            if (this->line == "\r\n" || this->line == "\n")
+                this->line.remove(QRegExp("\r?\n"));
 
-            QStringList lines = this->line.split(QRegExp("\r\n"));
+            QStringList lines = this->line.split(QRegExp("\r?\n"));
             foreach (QString line, lines)
                 parseLine(line);
 
